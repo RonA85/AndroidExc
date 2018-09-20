@@ -9,8 +9,6 @@ import com.applicx.androidexercise.model.Movie;
 import com.applicx.androidexercise.model.MovieRepo;
 import com.applicx.androidexercise.model.MoviesResponse;
 
-import okhttp3.Response;
-
 public class MovieViewModel extends ViewModel {
     private MutableLiveData<MoviesResponse> moviesLiveData;
     private MutableLiveData<CastResponse> castLiveData;

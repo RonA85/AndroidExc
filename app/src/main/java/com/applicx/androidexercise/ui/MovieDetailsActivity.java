@@ -62,7 +62,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
-        final LinearLayout cast = new LinearLayout(this);
         unbinder = ButterKnife.bind(this);
         movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
         movieViewModel.getMovieLiveData().observe(this, new Observer<Movie>() {

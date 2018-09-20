@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.OnM
                 assert moviesResponse != null;
                 List<Movie> movies = moviesResponse.getResults();
                 moviesAdapter = new MoviesAdapter(MainActivity.this,movies ,MainActivity.this);
-               // moviesAdapter.updateItems(movies);
                 rvMovies.setAdapter(moviesAdapter);
             }
         });
