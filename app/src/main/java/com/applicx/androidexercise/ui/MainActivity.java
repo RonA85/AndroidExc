@@ -46,15 +46,11 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.OnM
         unbinder = ButterKnife.bind(this);
         movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
         setupRecycler();
-//        moviesAdapter = new MoviesAdapter(MainActivity.this, MainActivity.this);
         swipe.setOnRefreshListener(this);
         etSearch.addTextChangedListener(this);
         movieViewModel.getMoviesLiveData().observe(this, new Observer<MoviesResponse>() {
             @Override
             public void onChanged(@Nullable MoviesResponse moviesResponse) {
-                // create an empty adapter and add it to the recycler view
-                // Reading all movies
-                //    List<Movie> movies = Movie.listAll(Movie.class);
                 swipe.setRefreshing(false);
                 assert moviesResponse != null;
                 List<Movie> movies = moviesResponse.getResults();
